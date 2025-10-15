@@ -12,9 +12,6 @@ export default function Contacts() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-  const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
-  const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name || !phone) {
@@ -25,20 +22,20 @@ export default function Contacts() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const formMessage = `Новая заявка с сайта:\n\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message || 'Не указано'}`;
-
     try {
-      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      const response = await fetch('/api/contacts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: CHAT_ID, text: formMessage }),
+        body: JSON.stringify({ name, phone, message }),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setSubmitStatus('success');
         setName(''); setPhone(''); setMessage('');
       } else {
-        throw new Error('Ошибка отправки');
+        throw new Error(data.error || 'Ошибка отправки');
       }
     } catch (error) {
       console.error('Error:', error);
