@@ -12,8 +12,8 @@ export default function Contacts() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-  const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-  const CHAT_ID = 'YOUR_CHAT_ID_HERE';
+  const BOT_TOKEN = '8305163811:AAEDolQaK7JZpaf79mH4LwBUdpondzJkJX4';
+  const CHAT_ID = '1858063236';
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
