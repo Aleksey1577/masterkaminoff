@@ -12,8 +12,8 @@ export default function Contacts() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-  const BOT_TOKEN = '8305163811:AAEDolQaK7JZpaf79mH4LwBUdpondzJkJX4';
-  const CHAT_ID = '1858063236';
+  const BOT_TOKEN = process.env.NEXT_PUBLIC_BOT_TOKEN;
+  const CHAT_ID = process.env.NEXT_PUBLIC_CHAT_ID;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -85,7 +85,7 @@ export default function Contacts() {
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-amber-700" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold">Telegram</h3>
