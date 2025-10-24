@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Левая колонка: О компании */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Печной Мастер</h3>
+            <h3 className="text-xl font-bold mb-4">Мастер каминофф</h3>
             <p className="text-gray-500 mb-6">
               Профессиональный монтаж печей, каминов и дымоходов в Самаре. Гарантия на работы. Индивидуальный подход.
             </p>
@@ -59,7 +59,7 @@ export default function Footer() {
       {/* Копирайт */}
       <div className="bg-gray-50 py-6 border-t border-gray-200">
         <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Печной Мастер. Все права защищены.
+          &copy; {new Date().getFullYear()} Master kaminoff. Все права защищены.
         </div>
       </div>
     </footer>
