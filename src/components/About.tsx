@@ -25,9 +25,11 @@ export default function About() {
   return (
     <section id="about" className="bg-white py-20">
       {/* Номер раздела */}
-      <div className="container mx-auto px-4 mb-12 flex gap-4 items-center">
-        <span className="text-xl font-bold text-amber-500">01</span>
-        <hr className="border-t border-amber-500 w-full" />
+      <div className="container mx-auto px-4 mb-12">
+        <div className="flex items-center gap-4">
+          <span className="text-xl font-bold text-amber-500 whitespace-nowrap">01</span>
+          <hr className="flex-1 border-t border-amber-500 min-w-0" />
+        </div>
       </div>
       {/* Заголовок и преимущества */}
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between gap-8">

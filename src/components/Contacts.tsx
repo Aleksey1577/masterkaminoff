@@ -50,9 +50,11 @@ export default function Contacts() {
 
   return (
     <section id="contacts" className="bg-white py-20">
-      <div className="container mx-auto px-4 mb-12 flex justify-start items-center gap-4">
-        <span className="text-xl font-bold text-amber-500">05</span>
-        <hr className="border-t border-amber-500 w-full" />
+      <div className="container mx-auto px-4 mb-12">
+        <div className="flex items-center gap-4">
+          <span className="text-xl font-bold text-amber-500 whitespace-nowrap">05</span>
+          <hr className="flex-1 border-t border-amber-500 min-w-0" />
+        </div>
       </div>
 
       <div className="container mx-auto px-4 mb-16">
@@ -76,8 +78,8 @@ export default function Contacts() {
               <h3 className="text-xl font-semibold">Телефон</h3>
             </div>
             <p className="text-gray-600 mb-4">Позвоните нам для консультации</p>
-            <a href="tel:+79198055747" className="text-lg font-bold text-amber-700 hover:text-amber-800 transition">
-              +7 (919) 805-57-47
+            <a href="tel:+79179535850" className="text-lg font-bold text-amber-700 hover:text-amber-800 transition">
+              +7 (917) 953-58-50
             </a>
           </motion.div>
 
@@ -132,7 +134,7 @@ export default function Contacts() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="w-full md:w-1/2">
-            <div className="relative h-64 md:h-96 rounded-lg shadow-lg overflow-hidden">
+            <div className="relative h-64 md:h-120 rounded-lg shadow-lg overflow-hidden">
               <Image src="/images/contact11.jpg" alt="Контакты" fill className="object-cover" />
             </div>
           </motion.div>

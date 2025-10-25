@@ -8,15 +8,14 @@ export default function Services() {
     e.preventDefault();
     const contactsSection = document.getElementById("contacts");
     if (contactsSection) {
-      // Кастомный плавный скролл с медленной скоростью
       const start = window.pageYOffset;
       const target = contactsSection.getBoundingClientRect().top + start;
-      const duration = 2000; // 2 секунды для медленного скролла (увеличь для ещё медленнее)
+      const duration = 2000;
       const startTime = performance.now();
 
       const scrollStep = (currentTime: number) => {
         const progress = Math.min((currentTime - startTime) / duration, 1);
-        const easeProgress = easeInOutQuad(progress); // Функция easing для плавности
+        const easeProgress = easeInOutQuad(progress);
         window.scrollTo(0, start + (target - start) * easeProgress);
 
         if (progress < 1) {
@@ -28,33 +27,28 @@ export default function Services() {
     }
   }, []);
 
-  // Функция easing для более естественного скролла (ease-in-out)
   const easeInOutQuad = (t: number) => {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   };
 
   return (
     <section id="services" className="bg-white py-20">
-      {/* Номер раздела и линия */}
-      <div className="container mx-auto px-4 mb-12 flex justify-start items-center gap-4">
-        <span className="text-xl font-bold text-amber-500">02</span>
-        <hr className="border-t border-amber-500 w-full" /> {/* Убрал mt-2 для выравнивания */}
+      <div className="container mx-auto px-4 mb-12">
+        <div className="flex justify-start items-center gap-4">
+          <span className="text-xl font-bold text-amber-500 whitespace-nowrap">02</span>
+          <hr className="flex-1 border-t border-amber-500 min-w-0" />
+        </div>
       </div>
 
-      {/* Основной контент */}
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-        {/* Левая колонка: Заголовок */}
         <div className="md:w-1/2">
-          {/* Заголовок */}
           <h2 className="text-5xl font-bold mb-6">НАШИ УСЛУГИ</h2>
 
-          {/* Описание услуг */}
           <p className="text-lg mb-12">
             Наша бригада опытных мастеров специализируется на монтаже печей, каминов и дымоходов любого типа. Мы предлагаем полный цикл услуг: от подбора подходящих моделей до их доставки и профессионального монтажа, гарантируя высокое качество, безопасность и скорость выполнения работ.
           </p>
         </div>
 
-        {/* Правая колонка: Кнопка */}
         <div className="md:w-1/2 text-right">
           <p className="text-sm font-medium text-gray-500 mb-4">
             Оставьте заявку и наши специалисты свяжутся с Вами для консультации
@@ -72,9 +66,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Блоки с изображениями и описанием */}
       <div className="container mx-auto px-4 mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Блок 1 */}
         <div className="flex flex-col items-center text-center">
           <Image
             src="/images/service1.svg"
@@ -89,7 +81,6 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Блок 2 */}
         <div className="flex flex-col items-center text-center">
           <Image
             src="/images/service2.svg"
@@ -104,7 +95,6 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Блок 3 */}
         <div className="flex flex-col items-center text-center">
           <Image
             src="/images/service3.svg"

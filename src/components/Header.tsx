@@ -49,7 +49,7 @@ export default function Header() {
   const easeInOutQuad = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
   return (
-    <header className={`bg-white text-gray-900 sticky top-0 z-50 px-4 py-4 flex items-center justify-between shadow-md transition-transform duration-300 ${isScrolledDown ? ' -translate-y-full' : ''}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 bg-white text-gray-900 px-4 py-4 flex items-center justify-between shadow-md transition-transform duration-300 ${isScrolledDown ? ' -translate-y-full' : 'translate-y-0'}`}>
       <div className="text-2xl font-bold">Master Kaminoff</div>
 
       <nav className="hidden md:flex justify-center flex-1 space-x-8 text-lg font-medium">
@@ -87,7 +87,7 @@ export default function Header() {
       </button>
 
       {menuOpen && (
-        <nav className="w-full bg-white text-gray-900 shadow-md py-4 z-40 md:hidden sticky top-0">
+        <nav className="fixed inset-x-0 top-full bg-white text-gray-900 shadow-md py-4 z-40 md:hidden">
           <ul className="flex flex-col items-center space-y-6 px-4">
             <li><Link href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-amber-700 transition">О нас</Link></li>
             <li><Link href="#services" onClick={(e) => scrollToSection(e, 'services')} className="hover:text-amber-700 transition">Услуги</Link></li>
